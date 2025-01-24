@@ -64,6 +64,7 @@ func main() {
 	}
 
 	go func() {
+		defer close(channel)
 		for i := range channel {
 			fmt.Println(i)
 		}
